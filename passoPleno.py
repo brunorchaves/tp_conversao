@@ -22,31 +22,34 @@ H = B / mu0
 g = 0.50  # mm
 FMM = H * g
 
-# 5) Plota H vs ângulo
+# 5) Plota H vs ângulo (exibe apenas, sem salvar)
 plt.figure(figsize=(8, 5))
-plt.plot(angles_deg, H,  linestyle='-')
+plt.plot(angles_deg, H, color='blue', linestyle='-')
 plt.xlabel('Ângulo (°)')
 plt.ylabel('H (A/m)')
 plt.title('Intensidade de Campo H vs Ângulo')
 plt.grid(True)
 plt.tight_layout()
+plt.show()
 
-# 6) Plota FMM vs ângulo
+# 6) Plota FMM vs ângulo e salva em PNG
 plt.figure(figsize=(8, 5))
-plt.plot(angles_deg, FMM, linestyle='-')
+plt.plot(angles_deg, FMM, color='red', linestyle='-')
 plt.xlabel('Ângulo (°)')
 plt.ylabel('FMM (A·mm)')
-plt.title('Força Magnetomotriz (FMM) vs Ângulo')
+plt.title('Força Magnetomotriz (FMM) vs Ângulo - Passo pleno')
 plt.grid(True)
 plt.tight_layout()
+plt.savefig('fmm_pleno.png', dpi=300)
+plt.show()
 
-# 7) Plota B vs ângulo
+# 7) Plota B vs ângulo e salva em PNG
 plt.figure(figsize=(8, 5))
-plt.plot(angles_deg, B, linestyle='-')
+plt.plot(angles_deg, B, color='green', linestyle='-')
 plt.xlabel('Ângulo (°)')
 plt.ylabel('B (T)')
-plt.title('Densidade de Fluxo B vs Ângulo')
+plt.title('Densidade de Fluxo B vs Ângulo - Passo pleno')
 plt.grid(True)
 plt.tight_layout()
-
+plt.savefig('b_pleno.png', dpi=300)
 plt.show()
